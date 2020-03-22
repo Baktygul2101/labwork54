@@ -7,16 +7,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 
 @Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 @Document(collection="subscriptions")
 public class Subscription{
     @Id
-    String id;
+    private String id;
     @DBRef
     private Event event;
-    String email;
-    LocalDate regTime;
+    private String email;
+    private LocalDate regTime;
 
 }
