@@ -1,10 +1,23 @@
 package com.example.lab.controller;
 
+import com.example.lab.model.Event;
+import com.example.lab.service.EventService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
-@RequestMapping("/events")
+@RequestMapping(value = "/events", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 public class EventController {
+    @Autowired
+    private EventService eventService;
 
+
+    @GetMapping("/events")
+    public List<Event> allEvents() {
+        return eventService.findAll();
+    }
 }
