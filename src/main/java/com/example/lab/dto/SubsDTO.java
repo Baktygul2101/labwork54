@@ -1,6 +1,5 @@
 package com.example.lab.dto;
 
-import com.example.lab.model.Event;
 import lombok.*;
 import com.example.lab.model.Subscription;
 
